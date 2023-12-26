@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root,
+  .light,
+  .light-theme {
+    --merza-color-white: 0 0% 100%;
+    --merza-color-black: 0 0% 0%;
+
+    /* Backgrounds */
+    --merza-theme-background-default: 0 0% 100%;
+    --merza-theme-background-screen: 240 20% 99%;
+    --merza-theme-background-subtle: 240 20% 98%;
+    --merza-theme-background-element: 240 11.1% 94.7%;
+    --merza-theme-background-hover: 240 9.5% 91.8%;
+
+    /* Borders */
+    --merza-theme-border-default: 233.3 9.9% 82.2%;
+    --merza-theme-border-secondary: 240 10.1% 86.5%;
+
+    /* Text */
+    --merza-theme-text-default: 210 12.5% 12.5%;
+    --merza-theme-text-secondary: 233.3 9.9% 82.2%;
+
+    /* Light shadows */
+    --merza-theme-shadows-none: 0 0 transparent;
+    --merza-theme-shadows-xs: 0 1px 3px rgba(0, 0, 0, 0.025),
+      0 1px 2px rgba(0, 0, 0, 0.05);
+    --merza-theme-shadows-sm: 0 3px 6px rgba(0, 0, 0, 0.08),
+      0 2px 4px rgba(0, 0, 0, 0.07);
+    --merza-theme-shadows-md: 0 10px 20px rgba(0, 0, 0, 0.1),
+      0 3px 6px rgba(0, 0, 0, 0.05);
+    --merza-theme-shadows-lg: 0 15px 25px rgba(0, 0, 0, 0.12),
+      0 5px 10px rgba(0, 0, 0, 0.05);
+    --merza-theme-shadows-xl: 0 20px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .dark,
+  .dark-theme {
+    --slate-1: 240 5.6% 7.1%;
+    --slate-2: 220 5.9% 10%;
+    --slate-3: 225 5.7% 13.7%;
+    --slate-4: 210 7.1% 16.5%;
+    --slate-6: 213.3 7.7% 22.9%;
+    --slate-7: 212.7 7.6% 28.4%;
+    --slate-11: 216 6.8% 71%;
+    --slate-12: 220 9.1% 93.5%;
+
+    /* Backgrounds */
+    --merza-theme-background-default: 240 5.6% 7.1%;
+    --merza-theme-background-screen: 210, 7.7% 5.1%;
+    --merza-theme-background-subtle: 220 5.9% 10%;
+    --merza-theme-background-element: 225 5.7% 13.7%;
+    --merza-theme-background-hover: 210 7.1% 16.5%;
+
+    /* Text */
+    --merza-theme-text-default: 220 9.1% 93.5%;
+    --merza-theme-text-secondary: 216 6.8% 71%;
+
+    /* Borders */
+    --merza-theme-border-default: 212.7 7.6% 28.4%;
+    --merza-theme-border-secondary: 213.3 7.7% 22.9%;
+
+    /* Dark shadows */
+    --merza-theme-shadows-none: 0 0 transparent;
+    --merza-theme-shadows-xs: 0 1px 3px rgba(0, 0, 0, 0.3),
+      0 1px 2px rgba(0, 0, 0, 0.3);
+    --merza-theme-shadows-sm: 0 3px 6px rgba(0, 0, 0, 0.4),
+      0 2px 4px rgba(0, 0, 0, 0.25);
+    --merza-theme-shadows-md: 0 10px 20px rgba(0, 0, 0, 0.25),
+      0 3px 6px rgba(0, 0, 0, 0.25);
+    --merza-theme-shadows-lg: 0 15px 25px rgba(0, 0, 0, 0.5),
+      0 5px 10px rgba(0, 0, 0, 0.25);
+    --merza-theme-shadows-xl: 0 20px 40px rgba(0, 0, 0, 0.5);
+  }
+}
