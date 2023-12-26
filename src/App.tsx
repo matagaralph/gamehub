@@ -1,3 +1,4 @@
+import GameGrid from './components/GameGrid';
 import NavBar from './components/NavBar';
 
 const App = () => {
@@ -8,7 +9,9 @@ const App = () => {
         <aside className="p-4 w-[280px] h-dvh relative lg:flex hidden">
           SideBar
         </aside>
-        <main className="px-4 sm:px-6 lg:px-8 pt-8flex-1">Main</main>
+        <main className="px-4 sm:px-6 lg:px-8 pt-8flex-1">
+          <GameGrid />
+        </main>
       </div>
     </>
   );
