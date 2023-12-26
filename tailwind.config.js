@@ -23,6 +23,17 @@ export default {
       lg: 'hsl(var(--merza-theme-shadows-lg))',
       xl: 'hsl(var(--merza-theme-shadows-xl))',
     },
+    screens: {
+      xs: '340px',
+      sm: '420px',
+      'sm-gutters': '468px',
+      md: '740px',
+      'md-gutters': '788px',
+      lg: '960px',
+      'lg-gutters': '1008px',
+      xl: '1200px',
+      'xl-gutters': '1248px',
+    },
     extend: {
       backgroundColor: {
         default: 'hsl(var(--merza-theme-background-default))',
