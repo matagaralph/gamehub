@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@chakra-ui/icon": "^3.2.0",
     "@headlessui/react": "next",
     "@types/node": "^20.10.5",
     "axios": "^1.6.2",

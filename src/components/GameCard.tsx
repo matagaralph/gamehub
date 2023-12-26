@@ -1,5 +1,6 @@
 import { Game } from '../hooks/useGames';
-import { Card, CardFooter, CardHeader } from './ui/card';
+import PlatformIconList from './PlatformIconList';
+import { Card, CardContent, CardHeader } from './ui/card';
 
 interface Props {
   game: Game;
@@ -9,16 +10,15 @@ const GameCard = ({ game }: Props) => {
   return (
     <Card>
       <img src={game.background_image} alt="Game" />
-      <CardFooter>
-        <CardHeader>{game.name}</CardHeader>
-      </CardFooter>
+      <CardContent>
+        <CardHeader className="mt-3">{game.name}</CardHeader>
+        <div className="flex mt-1 space-x-1.5">
+          <PlatformIconList
+            platforms={game.parent_platforms.map((p) => p.platform)}
+          />
+        </div>
+      </CardContent>
     </Card>
-    // <div className="border border-solid border-default rounded-md overflow-hidden focus:shadow-xs hover:shadow-xs">
-    //   <img src={game.background_image} alt="Game Image" />
-    //   <div className="">
-    //     <h2 className="text-2xl">{game.name}</h2>
-    //   </div>
-    // </div>
   );
 };
 
