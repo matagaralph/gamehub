@@ -1,4 +1,5 @@
 import { Game } from '../hooks/useGames';
+import getCroppedImage from '../services/image-url';
 import CriticScore from './CriticScore';
 import PlatformIconList from './PlatformIconList';
 import { Card, CardContent, CardHeader } from './ui/card';
@@ -10,7 +11,7 @@ interface Props {
 const GameCard = ({ game }: Props) => {
   return (
     <Card>
-      <img src={game.background_image} alt="Game" />
+      <img src={getCroppedImage(game.background_image)} alt="Game" />
       <CardContent>
         <CardHeader className="mt-4">{game.name}</CardHeader>
         <div className="flex mt-4 justify-between">
