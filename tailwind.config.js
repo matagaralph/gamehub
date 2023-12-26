@@ -41,6 +41,7 @@ export default {
         subtle: 'hsl(var(--merza-theme-background-subtle))',
         element: 'hsl(var(--merza-theme-background-element))',
         hover: 'hsl(var(--merza-theme-background-hover))',
+        primary: 'hsl(var(--primary))',
       },
       colors: {
         default: 'hsl(var(--merza-theme-text-default))',
