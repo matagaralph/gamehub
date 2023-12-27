@@ -2,12 +2,14 @@ import useGenres, { Genre } from '../hooks/useGenres';
 import getCroppedImage from '../services/image-url';
 import { FiLoader } from 'react-icons/fi';
 import { Link } from './ui/link';
+import cn from '../lib/utils';
 
 interface Props {
   onSelectGenre: (genre: Genre) => void;
+  selectedGenre: Genre | null;
 }
 
-const GenreList = ({ onSelectGenre }: Props) => {
+const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
   const { data, isLoading } = useGenres();
 
   if (isLoading)
@@ -24,7 +26,10 @@ const GenreList = ({ onSelectGenre }: Props) => {
           <Link
             href="#"
             onClick={() => onSelectGenre(genre)}
-            className="relative inline-flex text-sm/6 font-medium gap-3 items-center hover:text-zinc-950 text-secondary dark:hover:text-white"
+            className={cn(
+              'relative inline-flex text-sm/6 gap-3 items-center hover:text-zinc-950 text-secondary dark:hover:text-white',
+              genre.id === selectedGenre?.id ? 'font-semibold' : 'font-normal'
+            )}
           >
             <img
               src={getCroppedImage(genre.image_background)}

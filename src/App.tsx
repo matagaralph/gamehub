@@ -20,7 +20,10 @@ const App = () => {
                 </h3>
               </li>
               <li className="mt-6">
-                <GenreList onSelectGenre={(genre) => setSelectedGenre(genre)} />
+                <GenreList
+                  selectedGenre={selectedGenre}
+                  onSelectGenre={(genre) => setSelectedGenre(genre)}
+                />
               </li>
             </ul>
           </aside>
