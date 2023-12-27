@@ -1,6 +1,5 @@
 import useGenres, { Genre } from '../hooks/useGenres';
 import getCroppedImage from '../services/image-url';
-import { FiLoader } from 'react-icons/fi';
 import { Link } from './ui/link';
 import cn from '../lib/utils';
 
@@ -10,18 +9,13 @@ interface Props {
 }
 
 const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
-  const { data, isLoading } = useGenres();
-
-  if (isLoading)
-    return (
-      <FiLoader className="animate-spin size-8 text-default text-center mt-6" />
-    );
+  const { data } = useGenres();
   return (
     <ul
       role="list"
       className="mt-4 space-y-3.5 border-zinc-200 dark:border-zinc-800"
     >
-      {data.map((genre) => (
+      {data.map((genre: Genre) => (
         <li key={genre.id}>
           <Link
             href="#"
