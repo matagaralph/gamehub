@@ -1,21 +1,31 @@
 import { useTheme } from './ThemeProvider';
-import { Switch } from './ui/switch';
+import { HiOutlineComputerDesktop, HiMoon } from 'react-icons/hi2';
 
 const NavBar = () => {
   const { theme, setTheme } = useTheme();
   return (
-    <div className="sticky top-0 z-20 grid h-[60px] grid-cols-[1fr_auto] items-center gap-4 border-b bg-default px-4  sm:px-6 lg:px-8 border-default">
+    <div className="z-20 grid h-[60px] grid-cols-[1fr_auto] items-center gap-4 border-b bg-default px-4  sm:px-6 lg:px-8 border-default">
       <img
         src="/logo.webp"
         alt=""
         className="flex cursor-pointer mt-px max-md-gutters:mt-0 h-12"
       />
-      <Switch
-        color="teal"
-        onClick={() => {
-          theme === 'dark' ? setTheme('light') : setTheme('dark');
-        }}
-      />
+      <div className="flex items-center justify-center">
+        <button
+          onClick={() => {
+            theme === 'light' ? setTheme('dark') : setTheme('light');
+          }}
+          className="inline-flex text-zinc-300 outline-blue-500 hover:text-zinc-400 dark:text-zinc-500 dark:hover:text-zinc-400"
+        >
+          {theme === 'system' ? (
+            <HiOutlineComputerDesktop className="size-6" />
+          ) : theme === 'light' ? (
+            <HiMoon className="size-6" />
+          ) : (
+            <HiMoon className="size-6" />
+          )}
+        </button>
+      </div>
     </div>
   );
 };

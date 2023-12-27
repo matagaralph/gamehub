@@ -1,6 +1,5 @@
 import useGenres from '../hooks/useGenres';
 import getCroppedImage from '../services/image-url';
-import { Text } from './ui/text';
 import { FiLoader } from 'react-icons/fi';
 
 const GenreList = () => {
@@ -11,17 +10,23 @@ const GenreList = () => {
       <FiLoader className="animate-spin size-8 text-default text-center mt-6" />
     );
   return (
-    <ul className="mt-6 list-none">
-      {data.map((g) => (
-        <li className="py-2" key={g.id}>
-          <div className="flex gap-2.5">
+    <ul
+      role="list"
+      className="mt-4 space-y-3.5 border-zinc-200 dark:border-zinc-800"
+    >
+      {data.map((genre) => (
+        <li key={genre.id}>
+          <a
+            className="relative inline-flex text-sm/6 font-medium gap-3 items-center  hover:text-zinc-950 text-secondary dark:hover:text-white"
+            href=""
+          >
             <img
-              src={getCroppedImage(g.image_background)}
-              alt={g.name}
+              src={getCroppedImage(genre.image_background)}
+              alt={genre.name}
               className="size-9 rounded-md"
             />
-            <Text className="text-lg">{g.name}</Text>
-          </div>
+            {genre.name}
+          </a>
         </li>
       ))}
     </ul>
