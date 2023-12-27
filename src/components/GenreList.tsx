@@ -1,8 +1,13 @@
-import useGenres from '../hooks/useGenres';
+import useGenres, { Genre } from '../hooks/useGenres';
 import getCroppedImage from '../services/image-url';
 import { FiLoader } from 'react-icons/fi';
+import { Link } from './ui/link';
 
-const GenreList = () => {
+interface Props {
+  onSelectGenre: (genre: Genre) => void;
+}
+
+const GenreList = ({ onSelectGenre }: Props) => {
   const { data, isLoading } = useGenres();
 
   if (isLoading)
@@ -16,9 +21,10 @@ const GenreList = () => {
     >
       {data.map((genre) => (
         <li key={genre.id}>
-          <a
-            className="relative inline-flex text-sm/6 font-medium gap-3 items-center  hover:text-zinc-950 text-secondary dark:hover:text-white"
-            href=""
+          <Link
+            href="#"
+            onClick={() => onSelectGenre(genre)}
+            className="relative inline-flex text-sm/6 font-medium gap-3 items-center hover:text-zinc-950 text-secondary dark:hover:text-white"
           >
             <img
               src={getCroppedImage(genre.image_background)}
@@ -26,7 +32,7 @@ const GenreList = () => {
               className="size-9 rounded-md"
             />
             {genre.name}
-          </a>
+          </Link>
         </li>
       ))}
     </ul>
