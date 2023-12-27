@@ -1,4 +1,5 @@
 import { Game } from '../hooks/useGames';
+import { capitalize } from '../lib/utils';
 import getCroppedImage from '../services/image-url';
 import CriticScore from './CriticScore';
 import PlatformIconList from './PlatformIconList';
@@ -13,7 +14,7 @@ const GameCard = ({ game }: Props) => {
     <Card>
       <img src={getCroppedImage(game.background_image)} alt="Game" />
       <CardContent>
-        <CardHeader className="mt-4">{game.name}</CardHeader>
+        <CardHeader className="mt-4">{capitalize(game.name)}</CardHeader>
         <div className="flex mt-4 justify-between">
           <div className="space-x-1.5">
             <PlatformIconList
