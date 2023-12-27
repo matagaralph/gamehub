@@ -7,7 +7,7 @@ const NavBar = () => {
     <div className="z-20 grid h-[60px] grid-cols-[1fr_auto] items-center gap-4 border-b bg-default px-4  sm:px-6 lg:px-8 border-default">
       <img
         src="/logo.webp"
-        alt=""
+        alt="Gamehub"
         className="flex cursor-pointer mt-px max-md-gutters:mt-0 h-12"
       />
       <div className="flex items-center justify-center">

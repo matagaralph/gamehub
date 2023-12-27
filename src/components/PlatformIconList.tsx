@@ -10,7 +10,7 @@ import {
   FaAndroid,
 } from 'react-icons/fa';
 import { MdPhoneIphone } from 'react-icons/md';
-import { SiNintendo } from 'react-icons/si';
+import { SiAtari, SiCommodore, SiNintendo, SiSega } from 'react-icons/si';
 import { BsGlobe } from 'react-icons/bs';
 import { IconType } from 'react-icons';
 
@@ -24,6 +24,9 @@ const iconMap: { [key: string]: IconType } = {
   pc: FaWindows,
   mac: FaApple,
   web: BsGlobe,
+  atari: SiAtari,
+  sega: SiSega,
+  commodore: SiCommodore,
 };
 
 interface Props {
