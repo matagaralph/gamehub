@@ -1,8 +1,12 @@
 /** @type {import('tailwindcss').Config} */
+import defaultTheme from 'tailwindcss/defaultTheme';
 export default {
   darkMode: ['class'],
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
+    fontFamily: {
+      sans: ['Inter var', 'Inter', ...defaultTheme.fontFamily.sans],
+    },
     borderRadius: {
       none: 0,
       xs: 2,

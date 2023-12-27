@@ -37,6 +37,8 @@
 
     /* Card */
     --primary: 222.2 47.4% 11.2%;
+    font-family: Inter, sans-serif;
+    font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
   }
 
   .dark,
@@ -70,5 +72,12 @@
 
     /* Card */
     --primary: 210 40% 98%;
+  }
+}
+
+@supports (font-variation-settings: normal) {
+  :root,
+  body {
+    font-family: InterVariable, sans-serif;
   }
 }

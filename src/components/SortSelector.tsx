@@ -27,7 +27,7 @@ const SortSelector = ({ onSelectOrder, sortOrder }: Props) => {
 
   return (
     <Dropdown>
-      <DropdownButton outline>
+      <DropdownButton outline className="shrink-0">
         Order By: {currentSortOrder?.label || 'Relevance'}
         <HiChevronDown />
       </DropdownButton>

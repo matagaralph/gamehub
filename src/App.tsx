@@ -39,7 +39,7 @@ const App = () => {
             </ul>
           </aside>
           <main className="min-w-0 lg:px-8 flex-1 gap-x-12 pb-16 pt-8 lg:pt-12">
-            <div className="flex items-center mb-6 space-x-5">
+            <div className="flex items-center mb-6 space-x-3">
               <PlatformSelector
                 selectedPlatform={gameQuery.platform}
                 onSelectPlatform={(platform) =>
