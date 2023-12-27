@@ -73,7 +73,7 @@ export function DropdownMenu({
           'overflow-y-auto',
 
           // Popover background
-          'bg-default/80 backdrop-blur-xl ',
+          'bg-white/75 backdrop-blur-xl dark:bg-zinc-800/75',
 
           // Shadows
           'shadow-xs  border border-default ring-1 ring-zinc-950/10 dark:ring-inset dark:ring-white/10',
