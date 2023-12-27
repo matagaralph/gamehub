@@ -11,6 +11,7 @@ export interface GameQuery {
   genre: Genre | null;
   platform: Platform | null;
   sortOrder: string;
+  searchText: string;
 }
 
 const App = () => {
@@ -18,7 +19,9 @@ const App = () => {
 
   return (
     <div className="isolate">
-      <NavBar />
+      <NavBar
+        onSearch={(searchText) => setGameQuery({ ...gameQuery, searchText })}
+      />
       <div className="px-6 lg:px-8">
         <div className="mx-auto flex items-start gap-x-12 ">
           <aside className="hidden max-h-[calc(100dvh-theme(spacing.16))] w-[220px] shrink-0 overflow-y-auto pb-16 pt-12 lg:block">
