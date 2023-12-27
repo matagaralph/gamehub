@@ -5,6 +5,7 @@ import NavBar from './components/NavBar';
 import PlatformSelector from './components/PlatformSelector';
 import { Genre } from './hooks/useGenres';
 import { Platform } from './hooks/useGames';
+import SortSelector from './components/SortSelector';
 
 export interface GameQuery {
   genre: Genre | null;
@@ -13,6 +14,7 @@ export interface GameQuery {
 
 const App = () => {
   const [gameQuery, setGameQuery] = useState({} as GameQuery);
+
   return (
     <div className="isolate">
       <NavBar />
@@ -36,13 +38,14 @@ const App = () => {
             </ul>
           </aside>
           <main className="min-w-0 lg:px-8 flex-1 gap-x-12 pb-16 pt-8 lg:pt-12">
-            <div className="mb-6">
+            <div className="flex items-center mb-6 space-x-5">
               <PlatformSelector
                 selectedPlatform={gameQuery.platform}
                 onSelectPlatform={(platform) =>
                   setGameQuery({ ...gameQuery, platform })
                 }
               />
+              <SortSelector />
             </div>
             <GameGrid gameQuery={gameQuery} />
           </main>
