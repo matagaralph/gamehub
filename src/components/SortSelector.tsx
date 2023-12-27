@@ -6,19 +6,41 @@ import {
   DropdownItem,
 } from './ui/dropdown';
 
-const SortSelector = () => {
+interface Props {
+  onSelectOrder: (order: string) => void;
+  sortOrder: string;
+}
+
+const sortOrders = [
+  { value: '', label: 'Relevance' },
+  { value: '-added', label: 'Date added' },
+  { value: 'name', label: 'Name' },
+  { value: '-released', label: 'Release date' },
+  { value: '-metacritic', label: 'Popularity' },
+  { value: '-rating', label: 'Average rating' },
+];
+
+const SortSelector = ({ onSelectOrder, sortOrder }: Props) => {
+  const currentSortOrder = sortOrders.find(
+    (order) => order.value === sortOrder
+  );
+
   return (
     <Dropdown>
       <DropdownButton outline>
-        Order By: Revelance
+        Order By: {currentSortOrder?.label || 'Relevance'}
         <HiChevronDown />
       </DropdownButton>
       <DropdownMenu>
-        <DropdownItem>Name</DropdownItem>
-        <DropdownItem>Date added</DropdownItem>
-        <DropdownItem>Release date</DropdownItem>
-        <DropdownItem>Popularity</DropdownItem>
-        <DropdownItem>Average rating</DropdownItem>
+        {sortOrders.map((order) => (
+          <DropdownItem
+            onClick={() => onSelectOrder(order.value)}
+            key={order.value}
+            value={order.value}
+          >
+            {order.label}
+          </DropdownItem>
+        ))}
       </DropdownMenu>
     </Dropdown>
   );
