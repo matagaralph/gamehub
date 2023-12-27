@@ -9,8 +9,8 @@ const GameCardImage = ({ url }: { url: string }) => {
     <img
       src={getCroppedImage(url)}
       className={cn(
-        'filter transition-all',
-        loading ? 'h-[400px] grayscale' : 'grayscale-0'
+        'filter transition-all object-cover',
+        loading ? 'grayscale' : 'grayscale-0'
       )}
       loading="lazy"
       onLoad={() => {

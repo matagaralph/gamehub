@@ -14,8 +14,7 @@ const GameCard = ({ game }: Props) => {
     <Card>
       <GameCardImage url={game.background_image} />
       <CardContent>
-        <CardHeader className="mt-4">{capitalize(game.name)}</CardHeader>
-        <div className="flex mt-4 justify-between">
+        <div className="flex mt-4 mb-3 justify-between">
           <div className="space-x-1.5">
             <PlatformIconList
               platforms={game.parent_platforms.map((p) => p.platform)}
@@ -23,6 +22,7 @@ const GameCard = ({ game }: Props) => {
           </div>
           <CriticScore score={game.metacritic} />
         </div>
+        <CardHeader>{capitalize(game.name)}</CardHeader>
       </CardContent>
     </Card>
   );

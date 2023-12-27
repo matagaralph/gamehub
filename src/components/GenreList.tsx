@@ -34,7 +34,7 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
             <img
               src={getCroppedImage(genre.image_background)}
               alt={genre.name}
-              className="size-9 rounded-md"
+              className="size-9 rounded-md object-cover"
             />
             {genre.name}
           </Link>
