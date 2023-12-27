@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  safelist: ['icon-md', 'text-icon-default'],
-  darkMode: ['class', '[class*="dark-theme"]'],
+  darkMode: ['class'],
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     borderRadius: {

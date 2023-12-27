@@ -4,8 +4,7 @@
 
 @layer base {
   :root,
-  .light,
-  .light-theme {
+  .light {
     --merza-color-white: 0 0% 100%;
     --merza-color-black: 0 0% 0%;
 
@@ -21,8 +20,8 @@
     --merza-theme-border-secondary: 240 10.1% 86.5%;
 
     /* Text */
-    --merza-theme-text-default: 210 12.5% 12.5%;
-    --merza-theme-text-secondary: 233.3 9.9% 82.2%;
+    --merza-theme-text-default: 240 10% 3.9%;
+    --merza-theme-text-secondary: 0 0% 7.1%;
 
     /* Light shadows */
     --merza-theme-shadows-none: 0 0 transparent;
@@ -43,14 +42,14 @@
   .dark,
   .dark-theme {
     /* Backgrounds */
-    --merza-theme-background-default: 0 0% 7.1%;
+    --merza-theme-background-default: 240 5.9% 10%;
     --merza-theme-background-screen: 210, 7.7% 5.1%;
     --merza-theme-background-subtle: 220 5.9% 10%;
     --merza-theme-background-element: 225 5.7% 13.7%;
     --merza-theme-background-hover: 210 7.1% 16.5%;
 
     /* Text */
-    --merza-theme-text-default: 220 9.1% 93.5%;
+    --merza-theme-text-default: 0 0% 100%;
     --merza-theme-text-secondary: 216 6.8% 71%;
 
     /* Borders */
