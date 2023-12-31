@@ -9,14 +9,11 @@ const GameCardImage = ({ url }: { url: string }) => {
     <img
       src={getCroppedImage(url)}
       className={cn(
-        'filter transition-all object-cover',
-        loading ? 'grayscale' : 'grayscale-0'
+        'transition-all duration-300 object-cover w-full h-[259.333px]',
+        loading ? 'blur-md' : 'blur-none'
       )}
       loading="lazy"
-      onLoad={() => {
-        setLoading(false);
-        console.log('Loaded');
-      }}
+      onLoad={() => setLoading(false)}
       alt="Game"
     />
   );
