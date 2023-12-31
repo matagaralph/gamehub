@@ -6,12 +6,10 @@ import { HiOutlineMagnifyingGlass } from 'react-icons/hi2';
 import { Input } from '@headlessui/react';
 import { useRef } from 'react';
 import cn from '../lib/utils';
+import useGameQueryStore from '../store';
 
-interface Props {
-  onSearch: (searchText: string) => void;
-}
-
-const SearchBar = ({ onSearch }: Props) => {
+const SearchBar = () => {
+  const setSearchText = useGameQueryStore((s) => s.setSearchText);
   const ref = useRef<HTMLInputElement>(null);
   return (
     <div className="flex flex-1 lg:flex-initial gap-x-4  self-stretch lg:self-center lg:gap-x-6">
@@ -19,7 +17,7 @@ const SearchBar = ({ onSearch }: Props) => {
         className="relative flex flex-1"
         onSubmit={(event) => {
           event.preventDefault();
-          if (ref.current) onSearch(ref.current.value);
+          if (ref.current) setSearchText(ref.current.value);
         }}
       >
         <label htmlFor="search-field" className="sr-only">
