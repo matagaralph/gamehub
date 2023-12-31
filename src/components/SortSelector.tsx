@@ -5,11 +5,7 @@ import {
   DropdownMenu,
   DropdownItem,
 } from './ui/dropdown';
-
-interface Props {
-  onSelectOrder: (order: string) => void;
-  sortOrder: string;
-}
+import useGameQueryStore from '../store';
 
 const sortOrders = [
   { value: '', label: 'Relevance' },
@@ -20,9 +16,11 @@ const sortOrders = [
   { value: '-rating', label: 'Average rating' },
 ];
 
-const SortSelector = ({ onSelectOrder, sortOrder }: Props) => {
+const SortSelector = () => {
+  const setSelectedOrderId = useGameQueryStore((s) => s.setSortOrder);
+  const sortOrder = useGameQueryStore((s) => s.gameQuery.sortOrder);
   const currentSortOrder = sortOrders.find(
-    (order) => order.value === sortOrder
+    (order) => order.label === sortOrder
   );
 
   return (
@@ -34,7 +32,7 @@ const SortSelector = ({ onSelectOrder, sortOrder }: Props) => {
       <DropdownMenu>
         {sortOrders.map((order) => (
           <DropdownItem
-            onClick={() => onSelectOrder(order.value)}
+            onClick={() => setSelectedOrderId(order.value)}
             key={order.value}
             value={order.value}
           >

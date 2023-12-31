@@ -1,15 +1,14 @@
 import useGenres, { Genre } from '../hooks/useGenres';
-import getCroppedImage from '../services/image-url';
-import { Link } from './ui/link';
 import cn from '../lib/utils';
+import getCroppedImage from '../services/image-url';
+import useGameQueryStore from '../store';
+import { Link } from './ui/link';
 
-interface Props {
-  onSelectGenre: (genre: Genre) => void;
-  selectedGenre: Genre | null;
-}
-
-const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
+const GenreList = () => {
   const { data } = useGenres();
+  const selectedGenreId = useGameQueryStore((s) => s.gameQuery.genreId);
+  const setSelectedGenreId = useGameQueryStore((s) => s.setGenreId);
+
   return (
     <ul
       role="list"
@@ -19,10 +18,10 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
         <li key={genre.id}>
           <Link
             href="#"
-            onClick={() => onSelectGenre(genre)}
+            onClick={() => setSelectedGenreId(genre.id)}
             className={cn(
               'relative inline-flex text-sm/6 gap-3 items-center hover:text-zinc-950 text-secondary dark:hover:text-white',
-              genre.id === selectedGenre?.id ? 'font-semibold' : 'font-normal'
+              genre.id === selectedGenreId ? 'font-semibold' : 'font-normal'
             )}
           >
             <img

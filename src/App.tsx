@@ -1,28 +1,14 @@
-import { useState } from 'react';
 import GameGrid from './components/GameGrid';
+import GameHeading from './components/GameHeading';
 import GenreList from './components/GenreList';
 import NavBar from './components/NavBar';
 import PlatformSelector from './components/PlatformSelector';
-import { Genre } from './hooks/useGenres';
-import { Platform } from './hooks/useGames';
 import SortSelector from './components/SortSelector';
-import GameHeading from './components/GameHeading';
-
-export interface GameQuery {
-  genre: Genre | null;
-  platform: Platform | null;
-  sortOrder: string;
-  searchText: string;
-}
 
 const App = () => {
-  const [gameQuery, setGameQuery] = useState({} as GameQuery);
-
   return (
     <div className="isolate">
-      <NavBar
-        onSearch={(searchText) => setGameQuery({ ...gameQuery, searchText })}
-      />
+      <NavBar />
       <div className="px-6 lg:px-8">
         <div className="mx-auto flex items-start gap-x-12 ">
           <aside className="hidden max-h-[calc(100dvh-theme(spacing.16))] w-[220px] shrink-0 overflow-y-auto pb-16 pt-12 lg:block">
@@ -33,32 +19,17 @@ const App = () => {
                 </h3>
               </li>
               <li className="mt-6">
-                <GenreList
-                  selectedGenre={gameQuery.genre}
-                  onSelectGenre={(genre) =>
-                    setGameQuery({ ...gameQuery, genre })
-                  }
-                />
+                <GenreList />
               </li>
             </ul>
           </aside>
           <main className="min-w-0 lg:px-8 flex-1 gap-x-12 pb-16 pt-8 lg:pt-12">
-            <GameHeading gameQuery={gameQuery} />
+            <GameHeading />
             <div className="flex items-center mb-6 space-x-3">
-              <PlatformSelector
-                selectedPlatform={gameQuery.platform}
-                onSelectPlatform={(platform) =>
-                  setGameQuery({ ...gameQuery, platform })
-                }
-              />
-              <SortSelector
-                sortOrder={gameQuery.sortOrder}
-                onSelectOrder={(sortOrder) =>
-                  setGameQuery({ ...gameQuery, sortOrder })
-                }
-              />
+              <PlatformSelector />
+              <SortSelector />
             </div>
-            <GameGrid gameQuery={gameQuery} />
+            <GameGrid />
           </main>
         </div>
       </div>

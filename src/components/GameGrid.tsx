@@ -2,13 +2,10 @@ import { Text } from './ui/text';
 import useGames from '../hooks/useGames';
 import GameCard from './GameCard';
 import GameCardSkeleton from './GameCardSkeleton';
-import { GameQuery } from '../App';
+import useGameQueryStore from '../store';
 
-interface Props {
-  gameQuery: GameQuery;
-}
-
-const GameGrid = ({ gameQuery }: Props) => {
+const GameGrid = () => {
+  const gameQuery = useGameQueryStore((s) => s.gameQuery);
   const { data, error, isLoading } = useGames(gameQuery);
   const skeletons = [...Array(8).keys()].map((i) => i + 1);
 
