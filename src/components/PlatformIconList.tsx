@@ -17,7 +17,7 @@ import { IconType } from 'react-icons';
 const iconMap: { [key: string]: IconType } = {
   nintendo: SiNintendo,
   ios: MdPhoneIphone,
-  androdi: FaAndroid,
+  android: FaAndroid,
   linux: FaLinux,
   xbox: FaXbox,
   playstation: FaPlaystation,
